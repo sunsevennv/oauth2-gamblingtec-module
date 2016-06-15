@@ -1,0 +1,12 @@
+<?php
+
+use Gamblingtec\OAuth2Module\Module;
+
+return [
+    Module::CONFIG => [
+        Module::CONFIG_CLIENT_ID => '',
+        Module::CONFIG_CLIENT_SECRET => '',
+        Module::CONFIG_REDIRECT_URI => '',
+        Module::CONFIG_SCOPES => [],
+    ],
+];

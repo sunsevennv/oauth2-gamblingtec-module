@@ -1,6 +1,7 @@
 <?php
 $finder = Symfony\CS\Finder\DefaultFinder::create()
-    ->in('src');
+    ->in('src')
+    ->in('config');
 $config = Symfony\CS\Config\Config::create();
 $config->level('psr2');
 $config->fixers(
