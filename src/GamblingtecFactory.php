@@ -20,7 +20,7 @@ class GamblingtecFactory implements FactoryInterface
             'clientId'                => $config[Module::CONFIG_CLIENT_ID],
             'clientSecret'            => $config[Module::CONFIG_CLIENT_SECRET],
             'redirectUri'             => $config[Module::CONFIG_REDIRECT_URI],
-            'scopes'                  => $config[Module::CONFIG_SCOPES],
+            'scope'                   => $config[Module::CONFIG_SCOPES],
         ];
         if (isset($config['domain'])) {
             $options['domain'] = $config['domain'];
