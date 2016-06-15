@@ -16,12 +16,16 @@ class GamblingtecFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $config = $serviceLocator->get('Config')[Module::CONFIG];
-        $provider = new Gamblingtec([
+        $options = [
             'clientId'                => $config[Module::CONFIG_CLIENT_ID],
             'clientSecret'            => $config[Module::CONFIG_CLIENT_SECRET],
             'redirectUri'             => $config[Module::CONFIG_REDIRECT_URI],
             'scopes'                  => $config[Module::CONFIG_SCOPES],
-        ]);
+        ];
+        if (isset($config['domain'])) {
+            $options['domain'] = $config['domain'];
+        }
+        $provider = new Gamblingtec($options);
         return $provider;
     }
 }
