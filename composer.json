@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "gamblingtec/oauth2-gamblingtec": "dev-develop"
+        "gamblingtec/oauth2-gamblingtec": "^0.1@dev"
 	},
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^1.11.4"
