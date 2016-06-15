@@ -13,8 +13,6 @@ final class Module implements ConfigProviderInterface
 
     const CONFIG_REDIRECT_URI = 'redirect_uri';
 
-    const CONFIG_SCOPES = 'scopes';
-
     public function getConfig()
     {
         return [
@@ -22,7 +20,6 @@ final class Module implements ConfigProviderInterface
                 self::CONFIG_CLIENT_ID => '',
                 self::CONFIG_CLIENT_SECRET => '',
                 self::CONFIG_REDIRECT_URI => '',
-                self::CONFIG_SCOPES => [],
             ],
             'service_manager' => [
                 'factories' => [
