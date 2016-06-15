@@ -1,7 +1,7 @@
 <?php
 namespace Gamblingtec\OAuth2Module;
 
-use Gamblingtec\OAuth2\Provider\Gamblingtec;
+use Gamblingtec\OAuth2\Client\Provider\Gamblingtec;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
@@ -15,11 +15,12 @@ class GamblingtecFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
+        $config = $serviceLocator->get('Config')[Module::CONFIG];
         $provider = new Gamblingtec([
-            'clientId'                => $settings->getSettings('sso_client_id'),
-            'clientSecret'            => $settings->getSettings('sso_secret'),
-            'redirectUri'             => $settings->getSettings('sso_redirect_uri'),
-            'scopes'                  => ['basic', 'transparent'],
+            'clientId'                => $config[Module::CONFIG_CLIENT_ID],
+            'clientSecret'            => $config[Module::CONFIG_CLIENT_SECRET],
+            'redirectUri'             => $config[Module::CONFIG_REDIRECT_URI],
+            'scopes'                  => $config[Module::CONFIG_SCOPES],
         ]);
         return $provider;
     }
