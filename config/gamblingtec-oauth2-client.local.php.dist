@@ -7,5 +7,6 @@ return [
         Module::CONFIG_CLIENT_ID => '',
         Module::CONFIG_CLIENT_SECRET => '',
         Module::CONFIG_REDIRECT_URI => '',
+        //Module::CONFIG_DOMAIN => '',
     ],
 ];

@@ -13,6 +13,8 @@ final class Module implements ConfigProviderInterface
 
     const CONFIG_REDIRECT_URI = 'redirect_uri';
 
+    const CONFIG_DOMAIN = 'domain';
+
     public function getConfig()
     {
         return [
