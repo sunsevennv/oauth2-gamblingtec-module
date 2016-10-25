@@ -2,20 +2,15 @@
 namespace Gamblingtec\OAuth2Module;
 
 use Gamblingtec\OAuth2\Client\Provider\Gamblingtec;
+use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class GamblingtecFactory implements FactoryInterface
 {
-    /**
-     * Create service
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $serviceLocator->get('Config')[Module::CONFIG];
+        $config = $container->get('Config')[Module::CONFIG];
         $options = [
             'clientId'                => $config[Module::CONFIG_CLIENT_ID],
             'clientSecret'            => $config[Module::CONFIG_CLIENT_SECRET],
@@ -26,5 +21,16 @@ class GamblingtecFactory implements FactoryInterface
         }
         $provider = new Gamblingtec($options);
         return $provider;
+    }
+
+    /**
+     * Create service
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return mixed
+     */
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        return $this($serviceLocator, Gamblingtec::class);
     }
 }
