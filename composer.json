@@ -1,6 +1,6 @@
 {
     "name": "gamblingtec/oauth2-gamblingtec-module",
-    "description": "ZF2 Module for the Gamblingtec OAuth 2.0 Client",
+    "description": "ZF2/3/Expressive Module for the Gamblingtec OAuth 2.0 Client",
     "license": "BSD-3-Clause",
     "homepage": "https://www.gamblingtec.com",
     "authors": [
@@ -39,6 +39,10 @@
     "extra": {
         "branch-alias": {
             "dev-develop": "0.1.x-dev"
+        },
+        "zf": {
+            "component": "Gamblingtec\\OAuth2Module",
+            "config-provider": "Gamblingtec\\OAuth2Module\\ConfigProvider"
         }
     }
 }

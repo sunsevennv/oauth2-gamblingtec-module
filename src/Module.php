@@ -17,17 +17,15 @@ final class Module implements ConfigProviderInterface
 
     public function getConfig()
     {
+        $provider = new ConfigProvider();
+
         return [
             self::CONFIG => [
                 self::CONFIG_CLIENT_ID => '',
                 self::CONFIG_CLIENT_SECRET => '',
                 self::CONFIG_REDIRECT_URI => '',
             ],
-            'service_manager' => [
-                'factories' => [
-                    'Gamblingtec\\OAuth2\\Client\\Provider\\Gamblingtec' => GamblingtecFactory::class,
-                ],
-            ],
+            'service_manager' => $provider->getDependencyConfig(),
         ];
     }
 }
