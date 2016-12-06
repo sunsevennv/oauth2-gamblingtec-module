@@ -21,7 +21,7 @@
         "zendframework"
     ],
     "require": {
-        "php": ">=5.5.0",
+        "php": "^5.5.0 || ^7.0",
         "gamblingtec/oauth2-gamblingtec": "^0.1@dev",
         "zendframework/zend-servicemanager": "^2.6 || ^3.0"
 	},
