@@ -10,7 +10,7 @@ class GamblingtecFactory implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $container->get('Config')[Module::CONFIG];
+        $config = $container->get('config')[Module::CONFIG];
         $options = [
             'clientId'                => $config[Module::CONFIG_CLIENT_ID],
             'clientSecret'            => $config[Module::CONFIG_CLIENT_SECRET],
