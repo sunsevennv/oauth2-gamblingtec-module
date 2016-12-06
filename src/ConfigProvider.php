@@ -19,7 +19,7 @@ class ConfigProvider
     {
         return [
             'factories' => [
-                'Gamblingtec\\OAuth2\\Client\\Provider\\Gamblingtec' => GamblingtecFactory::class,
+                \Gamblingtec\OAuth2\Client\Provider\Gamblingtec::class => GamblingtecFactory::class,
             ],
         ];
     }
