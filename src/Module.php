@@ -1,9 +1,7 @@
 <?php
 namespace Gamblingtec\OAuth2Module;
 
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-
-final class Module implements ConfigProviderInterface
+final class Module
 {
     const CONFIG = 'gamblingtec-oauth2-client';
 
