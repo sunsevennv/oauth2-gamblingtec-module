@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": "^5.5.0 || ^7.0",
-        "gamblingtec/oauth2-gamblingtec": "^0.1@dev",
+        "gamblingtec/oauth2-gamblingtec": "^0.1",
         "zendframework/zend-servicemanager": "^2.6 || ^3.0"
 	},
     "require-dev": {
@@ -38,7 +38,8 @@
 	},
     "extra": {
         "branch-alias": {
-            "dev-develop": "0.1.x-dev"
+            "dev-master": "0.1.x-dev",
+            "dev-develop": "0.2.x-dev"
         },
         "zf": {
             "component": "Gamblingtec\\OAuth2Module",
